@@ -294,7 +294,7 @@ End of Ads-->
 	</div>	
     <div id="fbLogin" class="fbLogin" style="display:block;">
 	 
-	    <button class="loginBtn loginBtn--facebook" id="loginbtn" onclick="postScore();">स्कोर पोस्ट करें</button>
+	    <button class="loginBtn loginBtn--facebook" id="loginbtn" onclick="postScore(); dataLayer.push({'event': 'FB-Login-Click'});">स्कोर पोस्ट करें</button>
 
     </div>
     <div id="status"></div>
@@ -302,7 +302,7 @@ End of Ads-->
   </div>
   
   
-  <div id="LbButton" class="LbButton" onclick="ig.game.showLeaderBoard(); autoPostScore(); tap();" style="display:none;"></div> 
+  <div id="LbButton" class="LbButton" onclick="ig.game.showLeaderBoard(); autoPostScore(); tap(); dataLayer.push({'event': 'Leaderboard-Click'});" style="display:none;"></div> 
   
   <span id="HighScore" class="HighScore" style="display:none;"></span>
 
