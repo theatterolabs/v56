@@ -4922,6 +4922,12 @@ jukebox.Manager = function(e) {
                 name: "coin",
                 path: "media/audio/sfx/ding"
             }, {
+                name: "majaa",
+                path: "media/audio/sfx/Majaa"
+            }, {
+                name: "samosa",
+                path: "media/audio/sfx/Samosa"
+            }, {
                 name: "chirp",
                 path: "media/audio/sfx/chirp"
             }],
@@ -9755,7 +9761,7 @@ jukebox.Manager = function(e) {
                 return .5 + e << 0
             },
             collectPickup: function(e) {
-                0 == e ? (ig.game.money += 1, this.coinsCollected += 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.coin)) : 1 == e && (ig.game.cookies += 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.crunch), this.powerLevel = (10 * this.powerLevel + 1) / 10, 1 <= this.powerLevel && (this.powerLevel = 1, this.character.queuePowerUp()))
+                0 == e ? (ig.game.money += 1, this.coinsCollected += 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.coin)) : 1 == e && (ig.game.cookies += 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.samosa), this.powerLevel = (10 * this.powerLevel + 1) / 10, 1 <= this.powerLevel && (this.powerLevel = 1, this.character.queuePowerUp()))
             },
             hitObstacle: function(e) {
                 this.character.state == this.character.STATES.POWERED ? (e.knockOut(), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.hit)) : (this.lifeCount -= 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.hit), 0 > this.lifeCount ? (this.lifeCount = 0, this.finishGame()) : (this.character.invulnerableStartTime = this.gameTime, this.character.isInvulnerable = !0, e.knockOut()))
@@ -9769,7 +9775,7 @@ jukebox.Manager = function(e) {
                 this.gameEnding = !0
             },
             finishGame: function() {
-                 ig.game.showLeaderBoardButton(), ig.game.showFbShare(), ig.game.showHighScore(), this.gameOver = !0, this.gameOverTime = ig.system.clock.delta(), ig.game.savePlayerStats(), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.chirp)
+                 ig.game.showLeaderBoardButton(), ig.game.showFbShare(), ig.game.showHighScore(), this.gameOver = !0, this.gameOverTime = ig.system.clock.delta(), ig.game.savePlayerStats(), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.chirp), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.majaa)
             },
             restartGame: function() {
                 ig.game.doTutorialFlag = !1,
