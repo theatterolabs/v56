@@ -9899,7 +9899,7 @@ jukebox.Manager = function(e) {
                     ig.ua.mobile ? ig.game.showOverlay(["play"]) : ig.game.startGame(), sizeHandler()
                 },
                 injectMobileLink: function() {
-                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play(); ig.game.clickedPlay();")       
+                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();ig.game.clickedPlay();")       
                 },
                 removeLoadingWheel: function() {
                     try {
@@ -10017,7 +10017,7 @@ jukebox.Manager = function(e) {
                 },
                 
                 clickedPlay: function() {
-                         ga('send', 'event', 'Video', 'play')
+                         ig.global.ga('send', 'event', 'Video', 'play')
                 },
                 
                 hideLeaderBoard: function() {
