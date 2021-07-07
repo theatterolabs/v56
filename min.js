@@ -9899,7 +9899,7 @@ jukebox.Manager = function(e) {
                     ig.ua.mobile ? ig.game.showOverlay(["play"]) : ig.game.startGame(), sizeHandler()
                 },
                 injectMobileLink: function() {
-                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();ig.game.clickedPlay();")       
+                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();")       
                 },
                 removeLoadingWheel: function() {
                     try {
@@ -9939,7 +9939,7 @@ jukebox.Manager = function(e) {
                     } catch (e) {
                         console.log(e), console.log("Loading original levels ..."), this.director.jumpTo(LevelOpening)
                     } else this.director.jumpTo(LevelOpening);
-                    ig.ua.mobile && (ig.soundHandler.stopBackgroundMusic(), ig.soundHandler.setupJukebox()), this.getPlayerStats(), ig.soundHandler.stopBackgroundMusic()
+                    ig.ua.mobile && (ig.soundHandler.stopBackgroundMusic(), ig.soundHandler.setupJukebox()), this.getPlayerStats(), ig.soundHandler.stopBackgroundMusic(), cppp = document.getElementById("PlayBtnClicked"), cppp.style.display = "block"
                 },
                 fpsCount: function() {
                     this.fpsTimer || (this.fpsTimer = new ig.Timer(1)), this.fpsTimer && this.fpsTimer.delta() < 0 ? null != this.fpsCounter ? this.fpsCounter++ : this.fpsCounter = 0 : (ig.game.fps = this.fpsCounter, this.fpsCounter = 0, this.fpsTimer.reset())
@@ -10015,11 +10015,6 @@ jukebox.Manager = function(e) {
                                 
                 },
                 
-                clickedPlay: function() {
-                        
-                        cp = document.getElementById("PlayBtnClicked"),
-                        cp.style.display = "block"
-                },
                 
                 hideLeaderBoard: function() {
                         
