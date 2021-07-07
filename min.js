@@ -10017,11 +10017,7 @@ jukebox.Manager = function(e) {
                 },
                 
                 clickedPlay: function() {
-                          gtag('event', 'link_click', {
-            event_category: 'Links',
-            event_action: 'Click',
-            event_label: 'Email link'
-        });
+                          window.dataLayer.push({'event': 'Play-Click'})
                 },
                 
                 hideLeaderBoard: function() {
