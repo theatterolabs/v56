@@ -9899,7 +9899,7 @@ jukebox.Manager = function(e) {
                     ig.ua.mobile ? ig.game.showOverlay(["play"]) : ig.game.startGame(), sizeHandler()
                 },
                 injectMobileLink: function() {
-                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();window.gtag('event', 'Play_Btn_Clicked');")       
+                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();ig.game.clickedPlay();")       
                 },
                 removeLoadingWheel: function() {
                     try {
@@ -10011,10 +10011,17 @@ jukebox.Manager = function(e) {
                 showLeaderBoard: function(){
                                 
                                 lb = document.getElementById("LeaderBoard"),
-                                lb.style.display = "block"
+                                lb.style.display = "block",
+                                  
                                 
                                 
 
+                },
+                
+                clickedPlay: function() {
+                        
+                        cp = document.getElementById("Play_Btn_Clicked"),
+                        cp.style.display = "block"
                 },
                 
                 hideLeaderBoard: function() {
@@ -10027,9 +10034,7 @@ jukebox.Manager = function(e) {
                 showLeaderBoardButton: function(){
                                 
                                 slbb = document.getElementById("LbButton"),
-                                slbb.style.display = "block"
-                                
-                                
+                                slbb.style.display = "block",
 
                 },
                 
