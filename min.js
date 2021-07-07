@@ -10017,6 +10017,7 @@ jukebox.Manager = function(e) {
                 },
                 
                 clickedPlay: function() {
+                        window.dataLayer = window.dataLayer || [],
                           window.dataLayer.push({'event': 'Play-Click'})
                 },
                 
