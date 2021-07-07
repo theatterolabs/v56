@@ -6895,7 +6895,7 @@ jukebox.Manager = function(e) {
                 }
             },
             playGame: function() {
-                ig.input.clearPressed(), this.moregames.hide(), ig.game.firstrun ? (ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats()) : ig.game.doTutorialFlag = !1, ig.game.director.jumpTo(LevelGame), window.gtag('event', 'Play_Btn_Pressed')
+                ig.input.clearPressed(), this.moregames.hide(), ig.game.firstrun ? (ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats()) : ig.game.doTutorialFlag = !1, ig.game.director.jumpTo(LevelGame), window.gtag('event', 'Started_Game')
             },
             playTutorial: function() {
                 ig.input.clearPressed(), this.moregames.hide(), ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats(), ig.game.director.jumpTo(LevelGame)
@@ -7478,7 +7478,7 @@ jukebox.Manager = function(e) {
                 this.queuedPowerUp = !0
             },
             powerUp: function() {
-                this.queuedPowerUp = !1, this.state != this.STATES.POWERED && (this.state = this.STATES.POWERED, this.anim = this.ballAnim, this.anim.rewind(), this.zIndex = 1200 - this.zValue, ig.game.sortEntitiesDeferred())
+                window.gtag('event', 'Achieved_PowerUp'), this.queuedPowerUp = !1, this.state != this.STATES.POWERED && (this.state = this.STATES.POWERED, this.anim = this.ballAnim, this.anim.rewind(), this.zIndex = 1200 - this.zValue, ig.game.sortEntitiesDeferred())
             },
             powerDown: function() {
                 if (0 > this.jumpOffset) {
@@ -9775,7 +9775,7 @@ jukebox.Manager = function(e) {
                 this.gameEnding = !0
             },
             finishGame: function() {
-                 ig.game.showLeaderBoardButton(), ig.game.showFbShare(), ig.game.showHighScore(), this.gameOver = !0, this.gameOverTime = ig.system.clock.delta(), ig.game.savePlayerStats(), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.chirp), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.majaa)
+                 ig.game.showLeaderBoardButton(), ig.game.showFbShare(), ig.game.showHighScore(), this.gameOver = !0, this.gameOverTime = ig.system.clock.delta(), ig.game.savePlayerStats(), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.chirp), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.majaa), window.gtag('event', 'Completed_Game')
             },
             restartGame: function() {
                 ig.game.doTutorialFlag = !1,
@@ -9784,7 +9784,8 @@ jukebox.Manager = function(e) {
                 ig.game.hideFbShare(),
                 ig.game.hideHighScore(),        
                 this.gameEndTime = ig.system.clock.delta(), 
-                this.gameEnding = !0, MobileAdInGamePreroll.Initialize()
+                this.gameEnding = !0, MobileAdInGamePreroll.Initialize(),
+                window.gtag('event', 'Played_Again')       
             },
                
             endGame: function() {
@@ -9795,7 +9796,7 @@ jukebox.Manager = function(e) {
                 if ((1 == this.tutorialStage || 2 == this.tutorialStage || 3 == this.tutorialStage || 5 == this.tutorialStage || 7 == this.tutorialStage || 9 == this.tutorialStage || 11 == this.tutorialStage || 13 == this.tutorialStage) && .5 > e) return !1;
                 switch (this.tutorialStage += 1, this.tutorialPausedTime = ig.system.clock.delta(), this.tutorialStage) {
                     case 1:
-                        this.tutorialPauseMode = !0, this.ui.showTutorialUI(0);
+                        window.gtag('event', 'Started_Tutorial'), this.tutorialPauseMode = !0, this.ui.showTutorialUI(0);
                         break;
                     case 2:
                         this.tutorialPauseMode = !0, this.ui.showTutorialUI(1);
@@ -9834,7 +9835,7 @@ jukebox.Manager = function(e) {
                         this.tutorialPauseMode = !0, this.ui.showTutorialUI(12);
                         break;
                     case 14:
-                        this.ui.hideTutorialUI(), this.tutorialMode = this.tutorialPauseMode = !1, this.characterMoveRight()
+                        this.ui.hideTutorialUI(), this.tutorialMode = this.tutorialPauseMode = !1, this.characterMoveRight(), window.gtag('event', 'Finished_Tutorial')
                 }
                 return !0
             }
