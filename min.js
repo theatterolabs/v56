@@ -10017,7 +10017,7 @@ jukebox.Manager = function(e) {
                 },
                 
                 clickedPlay: function() {
-                         ig.global.ga('send', 'event', 'Video', 'play')
+                         ig.global.gtag('event', 'Play-Click')
                 },
                 
                 hideLeaderBoard: function() {
