@@ -10006,7 +10006,7 @@ jukebox.Manager = function(e) {
                     ig.soundHandler.forceLoopBGM(), this.setupLocalStorage()
                 },
                 pressPlay: function() {
-                    this.hideOverlay(["play"]), ig.game.clickedPlay(), this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize()
+                    this.hideOverlay(["play"]), this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize()
                 },
                 showLeaderBoard: function(){
                                 
@@ -10017,7 +10017,7 @@ jukebox.Manager = function(e) {
                 
                 clickedPlay: function() {
                         
-                        cp = document.getElementById("Play_Btn_Clicked"),
+                        cp = document.getElementById("PlayBtnClicked"),
                         cp.style.display = "block"
                 },
                 
