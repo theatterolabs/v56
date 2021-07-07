@@ -6895,7 +6895,7 @@ jukebox.Manager = function(e) {
                 }
             },
             playGame: function() {
-                ig.input.clearPressed(), this.moregames.hide(), ig.game.firstrun ? (ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats()) : ig.game.doTutorialFlag = !1, ig.game.director.jumpTo(LevelGame)
+                ig.input.clearPressed(), this.moregames.hide(), ig.game.firstrun ? (ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats()) : ig.game.doTutorialFlag = !1, ig.game.director.jumpTo(LevelGame), window.gtag('event', 'PlayBtnPressed')
             },
             playTutorial: function() {
                 ig.input.clearPressed(), this.moregames.hide(), ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats(), ig.game.director.jumpTo(LevelGame)
@@ -10006,7 +10006,7 @@ jukebox.Manager = function(e) {
                     ig.soundHandler.forceLoopBGM(), this.setupLocalStorage()
                 },
                 pressPlay: function() {
-                    this.hideOverlay(["play"]), this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize(), ig.global.gtag('event', 'PlayBtnPressed')
+                    this.hideOverlay(["play"]), this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize()
                 },
                 showLeaderBoard: function(){
                                 
