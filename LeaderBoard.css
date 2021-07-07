@@ -345,9 +345,9 @@
 }
 
 /* Impression Tags */
-.Play_Btn_Clicked {
-  width: 10px;
-height: 10px;
+#PlayBtnClicked {
+  width: 20px;
+height: 20px;
 position: absolute;
 top: 0;
 left: 0;
