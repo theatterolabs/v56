@@ -9899,7 +9899,7 @@ jukebox.Manager = function(e) {
                     ig.ua.mobile ? ig.game.showOverlay(["play"]) : ig.game.startGame(), sizeHandler()
                 },
                 injectMobileLink: function() {
-                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();ig.global.ga('send', 'event', 'Play-Click', 'click');")       
+                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();gtag('event', 'Started_Game');")       
                 },
                 removeLoadingWheel: function() {
                     try {
