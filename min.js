@@ -9899,7 +9899,7 @@ jukebox.Manager = function(e) {
                     ig.ua.mobile ? ig.game.showOverlay(["play"]) : ig.game.startGame(), sizeHandler()
                 },
                 injectMobileLink: function() {
-                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();window.dataLayer.push({'event': 'Clicked-Play'});")       
+                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();")       
                 },
                 removeLoadingWheel: function() {
                     try {
@@ -10005,7 +10005,7 @@ jukebox.Manager = function(e) {
                     ig.soundHandler.forceLoopBGM(), this.setupLocalStorage()
                 },
                 pressPlay: function() {
-                    this.hideOverlay(["play"]), this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize()
+                    this.hideOverlay(["play"]), window.dataLayer.push({'event': 'Play-Click'}), this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize()
                 },
                 showLeaderBoard: function(){
                                 
