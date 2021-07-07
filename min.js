@@ -10018,7 +10018,7 @@ jukebox.Manager = function(e) {
                 
                 clickedPlay: function() {
                         
-                         window.ga('send', 'event', 'CTA click', 'click', buttonText)
+                         ig.global.ga('send', 'event', 'CTA click', 'click', buttonText)
                 },
                 
                 hideLeaderBoard: function() {
