@@ -10011,11 +10011,8 @@ jukebox.Manager = function(e) {
                 showLeaderBoard: function(){
                                 
                                 lb = document.getElementById("LeaderBoard"),
-                                lb.style.display = "block",
-                                  
+                                lb.style.display = "block"
                                 
-                                
-
                 },
                 
                 clickedPlay: function() {
@@ -10034,7 +10031,7 @@ jukebox.Manager = function(e) {
                 showLeaderBoardButton: function(){
                                 
                                 slbb = document.getElementById("LbButton"),
-                                slbb.style.display = "block",
+                                slbb.style.display = "block"
 
                 },
                 
