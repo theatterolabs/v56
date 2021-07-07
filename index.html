@@ -294,7 +294,7 @@ End of Ads-->
 	</div>	
     <div id="fbLogin" class="fbLogin" style="display:block;">
 	 
-	    <button class="loginBtn loginBtn--facebook" id="loginbtn" onclick="postScore(); dataLayer.push({'event': 'FB-Login-Click'});">स्कोर पोस्ट करें</button>
+	    <button class="loginBtn loginBtn--facebook" id="loginbtn" onclick="postScore(); gtag('event', 'FB_Login_Btn_Clicked');">स्कोर पोस्ट करें</button>
 
     </div>
     <div id="status"></div>
@@ -306,7 +306,7 @@ End of Ads-->
   
   <span id="HighScore" class="HighScore" style="display:none;"></span>
 
-<div class="shareBtn" id="fb-share" onclick="dataLayer.push({'event': 'FbShare-Click'});" style="display:none;"></div>
+<div class="shareBtn" id="fb-share" onclick="gtag('event', 'FB_Share_Btn_Clicked');" style="display:none;"></div>
 	
 	
 <span class="L-ico" id="iconTexta" style="display:none;"></span>
