@@ -302,7 +302,7 @@ End of Ads-->
   </div>
   
   
-  <div id="LbButton" class="LbButton" onclick="ig.game.showLeaderBoard(); autoPostScore(); tap(); dataLayer.push({'event': 'Leaderboard-Click'});" style="display:none;"></div> 
+  <div id="LbButton" class="LbButton" onclick="ig.game.showLeaderBoard(); autoPostScore(); tap(); ga('send', 'event', 'Play-Click', 'click');" style="display:none;"></div> 
   
   <span id="HighScore" class="HighScore" style="display:none;"></span>
 
