@@ -6895,7 +6895,7 @@ jukebox.Manager = function(e) {
                 }
             },
             playGame: function() {
-                ig.input.clearPressed(), this.moregames.hide(), ig.game.firstrun ? (ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats()) : ig.game.doTutorialFlag = !1, ig.game.director.jumpTo(LevelGame), window.gtag('event', 'PlayBtnPressed')
+                ig.input.clearPressed(), this.moregames.hide(), ig.game.firstrun ? (ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats()) : ig.game.doTutorialFlag = !1, ig.game.director.jumpTo(LevelGame), window.gtag('event', 'Play_Btn_Pressed')
             },
             playTutorial: function() {
                 ig.input.clearPressed(), this.moregames.hide(), ig.game.doTutorialFlag = !0, ig.game.firstrun = !1, ig.game.savePlayerStats(), ig.game.director.jumpTo(LevelGame)
@@ -9939,7 +9939,7 @@ jukebox.Manager = function(e) {
                     } catch (e) {
                         console.log(e), console.log("Loading original levels ..."), this.director.jumpTo(LevelOpening)
                     } else this.director.jumpTo(LevelOpening);
-                    ig.ua.mobile && (ig.soundHandler.stopBackgroundMusic(), ig.soundHandler.setupJukebox()), this.getPlayerStats(), ig.soundHandler.stopBackgroundMusic(), cppp = document.getElementById("PlayBtnClicked"), cppp.style.display = "block"
+                    ig.ua.mobile && (ig.soundHandler.stopBackgroundMusic(), ig.soundHandler.setupJukebox()), this.getPlayerStats(), ig.soundHandler.stopBackgroundMusic()
                 },
                 fpsCount: function() {
                     this.fpsTimer || (this.fpsTimer = new ig.Timer(1)), this.fpsTimer && this.fpsTimer.delta() < 0 ? null != this.fpsCounter ? this.fpsCounter++ : this.fpsCounter = 0 : (ig.game.fps = this.fpsCounter, this.fpsCounter = 0, this.fpsTimer.reset())
