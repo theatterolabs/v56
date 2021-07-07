@@ -10017,7 +10017,7 @@ jukebox.Manager = function(e) {
                 },
                 
                 clickedPlay: function() {
-                         window.dataLayer.push({'event': 'Play-Click'})
+                         ga('send', 'event', 'Video', 'play')
                 },
                 
                 hideLeaderBoard: function() {
