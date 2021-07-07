@@ -344,3 +344,14 @@
     
 }
 
+/* Impression Tags */
+.Play_Btn_Clicked {
+  width: 10px;
+height: 10px;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 11000;
+background-color: #ffffff;
+}
+
