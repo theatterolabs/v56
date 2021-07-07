@@ -9892,14 +9892,14 @@ jukebox.Manager = function(e) {
                 doTutorialFlag: !1,
                 firstrun: !0,
                 init: function() {
-                    this.setupControls(), this.setupGA(), this.setupLocalStorage(), this.removeLoadingWheel(), this.injectMobileLink(), this.setupURLParameters(), this.finalize()
+                    this.setupControls(), this.setupLocalStorage(), this.removeLoadingWheel(), this.injectMobileLink(), this.setupURLParameters(), this.finalize()
                 },
                 initSfx: function() {},
                 finalize: function() {
                     ig.ua.mobile ? ig.game.showOverlay(["play"]) : ig.game.startGame(), sizeHandler()
                 },
                 injectMobileLink: function() {
-                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();ga('send', 'event', 'Play-Click', 'click');")       
+                    $("#play").attr("onclick", "ig.game.pressPlay();ig.soundHandler.staticSound.play();ig.global.ga('send', 'event', 'Play-Click', 'click');")       
                 },
                 removeLoadingWheel: function() {
                     try {
@@ -9998,12 +9998,7 @@ jukebox.Manager = function(e) {
                 setupControls: function() {
                     ig.input.unbindAll(), ig.input.initMouse(), ig.input.bind(ig.KEY.MOUSE1, "click"), ig.input.bind(ig.KEY.LEFT_ARROW, "left"), ig.input.bind(ig.KEY.RIGHT_ARROW, "right"), ig.input.bind(ig.KEY.UP_ARROW, "up"), ig.input.bind(ig.KEY.DOWN_ARROW, "down"), ig.input.bind(ig.KEY.ENTER, "enter")
                 },
-                setupGA: function() {
-                        gascript = document.createElement("script),
-                        gascript.src = "https://www.googletagmanager.com/gtag/js?id=G-D0VP4SZJ4K",
-                        gascript.async = true,
-                        document.head.appendChild(gascript)                                
-                },
+              
                 setupURLParameters: function() {
                     this.setupURLParameters = new ig.UrlParameters
                 },
