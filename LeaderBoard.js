@@ -39,8 +39,10 @@ $('#fb-share').on('click', function(e) {
 	    function(response) {
 		if (response && response.post_id) {
 		    alert('Post was published.');
+			gtag('event', 'Shared_To_FB');
 		} else {
 		    alert('Post was not published.');
+			gtag('event', 'Did_Not_Share');
 		}
 	    }
     );
@@ -116,6 +118,7 @@ function postScore() { FB.login(function(response) {
             //document.getElementById('status').innerHTML = 'Your score was posted!';
           
              alert('Your Score Was Posted.');
+	      gtag('event', 'Posted_To_LeaderBoard');
 	      
 	      document.getElementById('fbLogin').style.display = 'none';
           
@@ -127,6 +130,7 @@ function postScore() { FB.login(function(response) {
         });
     } else {
             alert('Please Login To Post Your Score');
+	    gtag('event', 'Did_Not_Post_To_LeaderBoard');
     }
 });
 
