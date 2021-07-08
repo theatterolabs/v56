@@ -4904,6 +4904,9 @@ jukebox.Manager = function(e) {
                 name: "hit",
                 path: "media/audio/sfx/hit2"
             }, {
+                name: "hitnone",
+                path: "media/audio/sfx/hit1"
+            }, {
                 name: "step",
                 path: "media/audio/sfx/step"
             }, {
@@ -9764,7 +9767,7 @@ jukebox.Manager = function(e) {
                 0 == e ? (ig.game.money += 1, this.coinsCollected += 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.coin)) : 1 == e && (ig.game.cookies += 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.samosa), this.powerLevel = (10 * this.powerLevel + 1) / 10, 1 <= this.powerLevel && (this.powerLevel = 1, this.character.queuePowerUp()))
             },
             hitObstacle: function(e) {
-                this.character.state == this.character.STATES.POWERED ? (e.knockOut(), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.hit)) : (this.lifeCount -= 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.hit), 0 > this.lifeCount ? (this.lifeCount = 0, this.finishGame()) : (this.character.invulnerableStartTime = this.gameTime, this.character.isInvulnerable = !0, e.knockOut()))
+                this.character.state == this.character.STATES.POWERED ? (e.knockOut(), ig.soundHandler.playSound(ig.soundHandler.SOUNDID.hitnone)) : (this.lifeCount -= 1, ig.soundHandler.playSound(ig.soundHandler.SOUNDID.hit), 0 > this.lifeCount ? (this.lifeCount = 0, this.finishGame()) : (this.character.invulnerableStartTime = this.gameTime, this.character.isInvulnerable = !0, e.knockOut()))
             },
             quitGame: function() {
                 ig.game.restartGameFlag = !1, 
