@@ -99,10 +99,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	
 
 var contextPic = new Array("media/graphics/splash/mobile/cover-start-1.jpg","media/graphics/splash/mobile/cover-start-2.jpg");
+var contextAudio = new Array("media/audio/opening/HappuMom.ogg","media/audio/opening/HappuWife.ogg");	
 
 function chooseContextPic() {
      var randomNum = Math.floor(Math.random() * contextPic.length);
      document.getElementById("contextScreen").src = contextPic[randomNum];
+	document.getElementById("contextScreenAudio").src = contextAudio[randomNum];
+	document.getElementById("contextScreenAudio").play();
+	document.getElementById("contextScreenAudio").volume = 1;
+	
 	
 	/* Get Top Score */
 	
@@ -212,6 +217,8 @@ function chooseContextPic() {
 	<audio id="audio" src="media/audio/music/bgm.mp3" loop= "true"></audio>
 	
 	<audio id="tap" src="media/audio/sfx/button.ogg"></audio>
+	
+	<audio id="contextScreenAudio" src="media/audio/opening/HappuMom.ogg"></audio>
 	
 <!-- End Of Audio -->
 	
