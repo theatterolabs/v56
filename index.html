@@ -90,29 +90,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 <script>
 	
-//https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore
 	
-  window.onload = chooseContextPic;
-	
-	
-	
-	
+window.onload = chooseContextPic;
 
 var contextPic = new Array("media/graphics/splash/mobile/cover-start-1.jpg","media/graphics/splash/mobile/cover-start-2.jpg");
 var contextAudio = new Array("media/audio/opening/HappuMom.ogg","media/audio/opening/HappuWife.ogg");	
 
 function chooseContextPic() {
-     var randomNum = Math.floor(Math.random() * contextPic.length);
-     document.getElementById("contextScreen").src = contextPic[randomNum];
+     	var randomNum = Math.floor(Math.random() * contextPic.length);
+     	document.getElementById("contextScreen").src = contextPic[randomNum];
 	document.getElementById("contextScreenAudio").src = contextAudio[randomNum];
-	document.getElementById("contextScreenAudio").play();
 	
 	
 	
-	/* Get Top Score */
+	
+/********************************************** Get Top Score **************************************************************/
 	
 	
-	var scoreAPI = "https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore";
+var scoreAPI = "https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore";
 	
 
 				
@@ -134,10 +129,10 @@ function chooseContextPic() {
 				}); 
 
 	
-	/* End Get Top Score */
+	
 }
 	
-
+/******************************************* End Get Top Score *********************************************/	
     
 	function tap() {
 	
@@ -146,6 +141,7 @@ function chooseContextPic() {
         	tapAudio.volume = 1;
 
 	}
+	
 	
 	
 	
@@ -166,8 +162,14 @@ function chooseContextPic() {
         }
         
         var audio = document.getElementById("audio");
-        audio.play();
-        audio.volume = 0.07;
+	var contextDialogue = document.getElementById("contextScreenAudio");
+	contextDialogue.play();
+	contextDialogue.onended = function() {
+    			audio.play();
+       			audio.volume = 0.07;
+	};
+		
+        
 
         // If the page is hidden, pause the video;
         // if the page is shown, play the video
@@ -182,7 +184,7 @@ function chooseContextPic() {
 
         // Warn if the browser doesn't support addEventListener or the Page Visibility API
         if (typeof document.addEventListener === "undefined" || typeof document[hidden] === "undefined") {
-          alert("This demo requires a modern browser that supports the Page Visibility API.");
+          alert("Your Browser Doesnt Support Background Audio Muting");
         } else {
           // Handle page visibility change   
           document.addEventListener(visibilityChange, handleVisibilityChange, false);
@@ -192,12 +194,7 @@ function chooseContextPic() {
 
     } 
   
-  /*
-  function showLeaderBoard() {
-   document.getElementById("LeaderBoard").style.display = "block";
-    
-  }
-  */
+
  
  
     
