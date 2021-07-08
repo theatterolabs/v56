@@ -10007,7 +10007,7 @@ jukebox.Manager = function(e) {
                     ig.soundHandler.forceLoopBGM(), this.setupLocalStorage()
                 },
                 pressPlay: function() {
-                    this.hideOverlay(["play"]), this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize()
+                    this.startGame(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Footer.Enabled && MobileAdInGameFooter.Initialize(), ig.ua.mobile && _SETTINGS.Ad.Mobile.Header.Enabled && MobileAdInGameHeader.Initialize()
                 },
                 showLeaderBoard: function(){
                                 
