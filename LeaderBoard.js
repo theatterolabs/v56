@@ -194,7 +194,7 @@ async function populateRankings() {
     $("#rankings tbody tr").remove();
     try {
            // Populate Leaderboard
-    let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore');
+    let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore?skip=0&limit=50');
     let json = data;
     console.log('JSON :',json)
     let i = 1;
