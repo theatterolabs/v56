@@ -164,17 +164,13 @@ var scoreAPI = "https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore"
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
 	contextDialogue.play();
-	contextDialogue.onended = setTimeout(function(){
-		
-		function() {
+	contextDialogue.onended = function() {
     			document.getElementById("play").style.display = "none";
 			audio.play();
        			audio.volume = 0.07;
-		}
-	},2000);
+	}
 		
-        
-
+	
         // If the page is hidden, pause the video;
         // if the page is shown, play the video
         function handleVisibilityChange() {
