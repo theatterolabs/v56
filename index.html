@@ -130,7 +130,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 				}); 
 
 	
-	}
+	
 
 	
 /******************************************* End Get Top Score *********************************************/	
@@ -162,16 +162,13 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
-
-	async function playVideo() {
-  		try {
-   		 await contextDialogue.play();
-    		
-  		} catch(err) {
-   		 
-  		}
-	}
-	
+	var audioBtn = document.getElementById("playbutton");
+	 
+	audioBtn.addEventListener('click', (event) => {
+    			
+			contextDialogue.play();
+       			
+	});
 	
 	
 	contextDialogue.addEventListener('ended', (event) => {
@@ -202,6 +199,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         }
 
     }
+}
   
 
  
@@ -215,7 +213,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
     <div id="orientate"><img src="media/graphics/orientate/landscape.jpg" /></div>
 	
     <div id="play" class="play" onclick="">
-	    <button id="playbutton" onclick="play();" style="z-index:11000;width:100px;height:50px;dislay:block;position:absolute;top:0;left:0;">Click Me!</button>
+	    <button id="playbutton" style="z-index:11000;width:100px;height:50px;dislay:block;position:absolute;top:0;left:0;">Click Me!</button>
 	    <img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen" style="z-index:10999;"></img>
 	  
 	  </div> 
