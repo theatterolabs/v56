@@ -130,7 +130,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 
 	
 	
-
+}
 	
 /******************************************* End Get Top Score *********************************************/	
     
@@ -141,6 +141,10 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         	tapAudio.volume = 1;
 
 	}
+	
+	
+	var audioPlay = document.getElementById("playbutton");
+	audioPlay.addEventListener("click", play);
 	
 	function play() {
 
@@ -161,15 +165,9 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
-	var audioBtn = document.getElementById("playbutton");
 	 
-	audioBtn.addEventListener('click', (event) => {
-    			
-			contextDialogue.play();
+	contextDialogue.play();
        			
-	});
-	
-	
 	contextDialogue.addEventListener('ended', (event) => {
     			document.getElementById('play').style.display = 'none';
 			audio.play();
@@ -198,7 +196,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         }
 
     }
-}
+
   
 
  
