@@ -142,7 +142,11 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 
 	}
 	
+	let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+
+	var context_screen = document.getElementById("contextScreen");
 	
+	context_screen.addEventListener('touchEvent', play);
 	
 	 function play() {
 
@@ -163,7 +167,10 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
-	contextDialogue.play();
+	
+	contextDialogue.addEventListener('loadedmetadata', (event) => {	 
+		contextDialogue.play();
+	});
 	
 	contextDialogue.addEventListener('ended', (event) => {
     			document.getElementById('play').style.display = 'none';
@@ -205,7 +212,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
     <div id="game"><canvas id="canvas"></canvas></div>
   
     <div id="orientate"><img src="media/graphics/orientate/landscape.jpg" /></div>
-    <div id="play" class="play" onclick=""><img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen" onclick="play();" ontouchstart="play();"></div> 
+    <div id="play" class="play" onclick=""><img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen"/></div> 
         <img id="scrollDown" width="220" height="277"></img>
 
    
