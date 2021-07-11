@@ -93,7 +93,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 window.onload = chooseContextPic;
 
 var contextPic = new Array("media/graphics/splash/mobile/cover-start-1.jpg","media/graphics/splash/mobile/cover-start-2.jpg");
-var contextAudio = new Array("https://theatterolabs.github.io/v56/media/audio/opening/HappuMom.mp3","https://theatterolabs.github.io/v56/media/audio/opening/HappuMom.mp3");	
+var contextAudio = new Array("media/audio/opening/HappuMom.mp3","media/audio/opening/HappuMom.mp3");	
 
 function chooseContextPic() {
      	var randomNum = Math.floor(Math.random() * contextPic.length);
@@ -144,12 +144,8 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	
 	
 	function play() {
-		var contextDialogue = document.getElementById("contextScreenAudio");
-	
-	contextDialogue.play();
 
-
-        /*
+        
         // Set the name of the "hidden" property and the change event for visibility
         var hidden, visibilityChange; 
         if (typeof document.hidden !== "undefined") {
@@ -193,7 +189,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
           // Handle page visibility change   
           document.addEventListener(visibilityChange, handleVisibilityChange, false);
          
-        }*/
+        }
 
     }
 
@@ -210,8 +206,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
     <div id="orientate"><img src="media/graphics/orientate/landscape.jpg" /></div>
 	
     <div id="play" class="play" onclick="">
-	    <button id="playbutton" onclick="play();" style="z-index:11000;width:100px;height:50px;dislay:block;position:absolute;top:0;left:0;">Click Me!</button>
-	    <img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen" style="z-index:10999;"></img>
+	    <img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen" onclick="play();"/>
 	  
 	  </div> 
         <img id="scrollDown" width="220" height="277"></img>
@@ -220,11 +215,11 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 <!-- Audio -->	
 	
 	
-	<audio id="audio" src="https://theatterolabs.github.io/v56/media/audio/music/bgm.mp3" loop= "true" type="audio/mpeg"></audio>
+	<audio id="audio" src="media/audio/music/bgm.mp3" loop= "true" type="audio/mpeg"></audio>
 	
 	<audio id="tap" src="media/audio/sfx/button.mp3" type="audio/mpeg"></audio>
 	
-	<audio id="contextScreenAudio" src="https://theatterolabs.github.io/v56/media/audio/opening/HappuMom.mp3" type="audio/mpeg" preload="auto"></audio>
+	<audio id="contextScreenAudio" src="media/audio/opening/HappuMom.mp3" type="audio/mpeg" preload="auto"></audio>
 
 	
 <!-- End Of Audio -->
