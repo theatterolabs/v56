@@ -1,4 +1,4 @@
-$("play").click(function(){
+$("#play").click(function(){
 
        
         
