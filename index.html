@@ -145,7 +145,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	
 
 	var context_screen = document.getElementById("contextScreen");
-	//context_screen.addEventListener('touchstart', () => {});
+	context_screen.addEventListener('touchstart', () => {});
 	
 	context_screen.addEventListener("click touchstart", play);
 	
@@ -168,9 +168,8 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
-	contextDialogue.addEventListener('loadedmetadata', (event) => {	 
-		contextDialogue.play();
-	});
+	contextDialogue.play();
+	
 	
 	contextDialogue.addEventListener('ended', (event) => {
     			document.getElementById('play').style.display = 'none';
