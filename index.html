@@ -144,12 +144,11 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	
 	
 
-	var context_screen = document.getElementById("contextScreen");
-	let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+	var contextscreenTouch = document.getElementById("contextScreen");
+  	contextscreenTouch.addEventListener("touchstart", play, false);
 
-	$('#contextScreen').on(touchEvent, play);
-	
-	 function play() {
+ 
+	 function play(evt) {
 
        
         
