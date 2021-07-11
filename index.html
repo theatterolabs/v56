@@ -144,11 +144,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	
 	
 
-	var contextscreenTouch = document.getElementById("contextScreen");
-  	contextscreenTouch.addEventListner("click", play);
-	
- 
-	 function play() {
+	 $("#contextScreen").click(function() {
 
        
         
@@ -194,11 +190,10 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         } else {
           // Handle page visibility change   
           document.addEventListener(visibilityChange, handleVisibilityChange, false);
-            
          
         }
 
-    }
+    });
   
 }
  
