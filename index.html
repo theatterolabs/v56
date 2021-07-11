@@ -89,6 +89,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script defer src="LeaderBoard.js"></script>
 <script>
 	
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+	
 	
 window.onload = chooseContextPic;
 
@@ -141,7 +143,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 
 	}
 	
-	document.getElementById("contextScreen").addEventListener('click', function() {
+	document.getElementById("contextScreen").addEventListener(touchEvent, function() {
 
        
         
