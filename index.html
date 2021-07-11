@@ -144,8 +144,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	
 	
 	
-	function triggertap() {
-	document.getElementById("contextScreen").addEventListener("click", function() {
+	 function play() {
 
        
         
@@ -194,7 +193,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
          
         }
 
-    }); }
+    }
   
 
  
@@ -206,7 +205,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
     <div id="game"><canvas id="canvas"></canvas></div>
   
     <div id="orientate"><img src="media/graphics/orientate/landscape.jpg" /></div>
-    <div id="play" class="play" onclick=""><img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen" onclick="void(0);"></div> 
+    <div id="play" class="play" onclick=""><img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen" onclick="play();" ontouchstart="play();"></div> 
         <img id="scrollDown" width="220" height="277"></img>
 
    
