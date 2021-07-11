@@ -143,9 +143,6 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	}
 	
 	
-	var audioPlay = document.getElementById("playbutton");
-	audioPlay.addEventListener("click", play);
-	
 	function play() {
 
 
@@ -210,7 +207,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
     <div id="orientate"><img src="media/graphics/orientate/landscape.jpg" /></div>
 	
     <div id="play" class="play" onclick="">
-	    <button id="playbutton" style="z-index:11000;width:100px;height:50px;dislay:block;position:absolute;top:0;left:0;">Click Me!</button>
+	    <button id="playbutton" onclick="play();" style="z-index:11000;width:100px;height:50px;dislay:block;position:absolute;top:0;left:0;">Click Me!</button>
 	    <img src="media/graphics/splash/mobile/cover-start-1.jpg" id="contextScreen" style="z-index:10999;"></img>
 	  
 	  </div> 
