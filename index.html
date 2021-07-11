@@ -93,7 +93,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 window.onload = chooseContextPic;
 
 var contextPic = new Array("media/graphics/splash/mobile/cover-start-1.jpg","media/graphics/splash/mobile/cover-start-2.jpg");
-var contextAudio = new Array("media/audio/opening/HappuMom.mp3","media/audio/opening/HappuWife.mp3");	
+var contextAudio = new Array("https://theatterolabs.github.io/v56/media/audio/opening/HappuMom.mp3","https://theatterolabs.github.io/v56/media/audio/opening/HappuMom.mp3");	
 
 function chooseContextPic() {
      	var randomNum = Math.floor(Math.random() * contextPic.length);
@@ -145,7 +145,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	
 	function play() {
 		var contextDialogue = document.getElementById("contextScreenAudio");
-	 
+	contextDialogue.load(); 
 	contextDialogue.play();
 
 
@@ -220,11 +220,11 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 <!-- Audio -->	
 	
 	
-	<audio id="audio" src="media/audio/music/bgm.mp3" loop= "true" type="audio/mpeg"></audio>
+	<audio id="audio" src="https://theatterolabs.github.io/v56/media/audio/music/bgm.mp3" loop= "true" type="audio/mpeg"></audio>
 	
 	<audio id="tap" src="media/audio/sfx/button.mp3" type="audio/mpeg"></audio>
 	
-	<audio id="contextScreenAudio" src="media/audio/opening/HappuMom.mp3" type="audio/mpeg" preload="auto"></audio>
+	<audio id="contextScreenAudio" src="https://theatterolabs.github.io/v56/media/audio/opening/HappuMom.mp3" type="audio/mpeg" preload="auto"></audio>
 
 	
 <!-- End Of Audio -->
