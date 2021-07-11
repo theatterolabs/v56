@@ -164,11 +164,12 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
 	contextDialogue.play();
-	contextDialogue.onended = function() {
+	contextDialogue.addEventListener('ended', function()
+		
     			document.getElementById('play').style.display = 'none';
 			audio.play();
        			audio.volume = 0.07;
-	};
+	 },false);
 		
 	
         // If the page is hidden, pause the video;
@@ -215,7 +216,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 	
 	<audio id="tap" src="media/audio/sfx/button.mp3"></audio>
 	
-	<audio id="contextScreenAudio" src="media/audio/opening/HappuMom.mp3" autoplay></audio>
+	<audio id="contextScreenAudio" src="media/audio/opening/HappuMom.mp3"></audio>
 
 	
 <!-- End Of Audio -->
