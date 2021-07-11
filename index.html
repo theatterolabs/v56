@@ -164,11 +164,12 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
 	contextDialogue.play();
-	contextDialogue.onended = function() {
+	
+	contextDialogue.addEventListener('ended', (event) => {
     			document.getElementById('play').style.display = 'none';
 			audio.play();
        			audio.volume = 0.07;
-	};
+	});
 		
 	
         // If the page is hidden, pause the video;
