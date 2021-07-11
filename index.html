@@ -142,9 +142,10 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
 
 	}
 	
-	
+	document.getElementById("play").addEventListener("touchstart", play, false);
+	var ongoingTouches = [];
 
-	 $("#play").click(function() {
+	  function play() {
 
        
         
@@ -193,7 +194,7 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
          
         }
 
-    });
+    }
   
 }
  
