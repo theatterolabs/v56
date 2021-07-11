@@ -99,6 +99,8 @@ function chooseContextPic() {
      	var randomNum = Math.floor(Math.random() * contextPic.length);
      	document.getElementById("contextScreen").src = contextPic[randomNum];
 	document.getElementById("contextScreenAudio").src = contextAudio[randomNum];
+	const audioCtx = new AudioContext();
+
 	
 	
 	
@@ -160,9 +162,16 @@ var scoreAPI = "https://d1ygamnvncasrc.cloudfront.net/test/getscores?skip=0&limi
         
         var audio = document.getElementById("audio");
 	var contextDialogue = document.getElementById("contextScreenAudio");
+
+	async function playVideo() {
+  		try {
+   		 await contextDialogue.play();
+    		
+  		} catch(err) {
+   		 
+  		}
+	}
 	
-	contextDialogue.muted = false;
-	contextDialogue.play();
 	
 	
 	contextDialogue.addEventListener('ended', (event) => {
